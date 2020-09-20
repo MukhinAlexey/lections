@@ -1,9 +1,9 @@
 # Java Collection Framework
 
 ## Что такое Java Collections Framework? 
-Java Collections Framework - это библиотека встроенная в JDK (Java Development Kit), 
+Java Collections Framework - это библиотека встроенная в JDK (Java Development Kit) в пакете java.util, 
 которая создана для того, чтобы разработчик мог использовать готовые классы и интерфейсы 
-для работы с наборами объектов Java
+для работы с наборами однородных объектов Java
 ## Из чего состоит Java Collection Framework?
 - ### Java Collection Framework можно представить иерархией интерфейсов и классов
     - <img src="../media/Иерархия_Collections_Framework.jpg" width=800px>
@@ -84,6 +84,19 @@ Java Collections Framework - это библиотека встроенная в
 операций (например, сложность можно измерять в количестве арифметических операций, битовых операций 
 или операций на машине Тьюринга), а во-вторых, при увеличении размера входных данных вклад постоянных множителей 
 и слагаемых низших порядков, фигурирующих в выражении для точного времени работы, становится крайне незначительным.
+
+- Например, мы можем точно посчитать алгоритмическую сложность T(n) = n + n = 2n
+```java
+void complexFunction(List list) {
+	for (int i = 0; i < list.size; i++) {
+		someComplexLogic_1(); 
+    }
+    for (int j =0; i < list.size; i++){
+		someComplexLogic_2(); 
+    }
+}
+```
+- Но в терминах O-нотаций это будет O(n) = n
 
 ### Шпаргалка по вычислительной сложности в коллекциях
 - <img src="../media/Шпаргалка_по_вычислительной_сложности.jpg" width=800px>
