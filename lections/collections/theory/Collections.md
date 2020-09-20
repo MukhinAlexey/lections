@@ -7,6 +7,9 @@ Java Collections Framework - это библиотека встроенная в
 ## Из чего состоит Java Collection Framework?
 - ### Java Collection Framework можно представить иерархией интерфейсов и классов
     - <img src="../media/Иерархия_Collections_Framework.jpg" width=800px>
+- ### Интерфейс Iterable
+    - Методы:
+    - <img src="../media/Методы_интерфейса_Iterable.png" width=400px>
 - ### Интерфейс Collection
     - Наследует интерфейс Iterable
     - Методы:
@@ -84,6 +87,16 @@ Java Collections Framework - это библиотека встроенная в
 
 ### Шпаргалка по вычислительной сложности в коллекциях
 - <img src="../media/Шпаргалка_по_вычислительной_сложности.jpg" width=800px>
+
+## Что такое Iterator?
+Iterator - объект, позволяющий перебирать элементы коллекции. 
+Например foreach реализован с использованием итератора. 
+Одним из ключевых методов интерфейса Collection является метод Iterator<E> iterator().
+Метод Iterator<E> возвращает итератор - то есть объект, реализующий интерфейс Iterator.
+
+## Как между собой связаны Iterable и Iterator и «for-each»?
+- Интерфейс Iterable имеет только один метод - iterator(), который возвращает Iterator
+- Классы, реализующие интерфейс Iterable, могут применяться в конструкции for-each, которая использует Iterator
 
 ## Как работает ArrayList?
 
@@ -167,7 +180,7 @@ public static <T,U> T[] copyOf(U[] original, int newLength, Class<? extends T[]>
 ```
 Код для проверки того, что работа System.arraycopy зависит от количества элементов в массиве
 
-```
+```java
 public class Main {
 
   public static void main(String[] args) {
@@ -312,7 +325,7 @@ public boolean equals(Object obj) {
 
 Когда мы помещаем пару ключ/значение в HashMap, то HashMap вычисляет хеш от ключа, вызывая метод hashCode() у ключа. 
 
-```
+```java
 /**
  * Computes key.hashCode() and spreads (XORs) higher bits of hash
  * to lower.  Because the table uses power-of-two masking, sets of
@@ -342,7 +355,7 @@ static final int hash(Object key) {
 
 ### Какая размерность HashMap по умолчанию?
 
-```
+```java
 /**
  * The default initial capacity - MUST be a power of two.
  */
@@ -354,10 +367,6 @@ static final int DEFAULT_INITIAL_CAPACITY = 1 << 4; // aka 16
 ## В чем разница между классами java.util.Collection и java.util.Collections?
 - java.util.Collections - набор статических методов для работы с коллекциями
 - java.util.Collection - один из основных интерфейсов Java Collections Framework
-
-## Как между собой связаны Iterable и Iterator и «for-each»?
-- Интерфейс Iterable имеет только один метод - iterator(), который возвращает Iterator
-- Классы, реализующие интерфейс Iterable, могут применяться в конструкции for-each, которая использует Iterator.
 
 ## Как отсортировать коллекцию?
 
