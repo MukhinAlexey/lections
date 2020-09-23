@@ -394,6 +394,17 @@ static final int hash(Object key) {
 
 Вычисленное значение hashCode берется по модулю от количества bucket'ов в HashMap и помещается по номеру вычисленной позиции
 в нужный bucket.
+
+```java
+/**
+ * The table, initialized on first use, and resized as
+ * necessary. When allocated, length is always a power of two.
+ * (We also tolerate length zero in some operations to allow
+ * bootstrapping mechanics that are currently not needed.)
+ */
+transient Node<K,V>[] table;
+```
+
 Если в bucket`е по вычисленной позицией уже имеются другие пары ключ/значение, тогда HashMap пробегается по списку объектов 
 и сравнивает ключ с уже лежащими ключами с помощью метода equals(Object obj).
 
