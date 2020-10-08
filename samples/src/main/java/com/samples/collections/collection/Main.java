@@ -9,6 +9,4 @@ public class Main {
         CollectionInterfaceImpl<Object> collectionInterface = new CollectionInterfaceImpl<>();
         collectionInterface.add(new Object());
     }
-
-
 }
